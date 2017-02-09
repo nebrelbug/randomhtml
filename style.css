@@ -27,6 +27,7 @@ h1 {
 }
 
 #homeParagraph {
+  width: 600px;
   border: 1px solid Black;
   border-radius: 4px;
   background-color: White;
