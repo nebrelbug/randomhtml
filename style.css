@@ -28,6 +28,7 @@ h1 {
 
 #homeParagraph {
   width: 600px;
+  margin: auto;
   border: 1px solid Black;
   border-radius: 4px;
   background-color: White;
@@ -37,5 +38,9 @@ h1 {
 #homeParagraphLink {
   background-color: White;
   
+}
+
+h1:hover {
+  color: Blue;
 }
 
