@@ -3,7 +3,7 @@ p {
 color: SeaGreen;
 font-family: Arial;
 text-align: center;
-border: 1px Black;
+border: 1px solid Black;
 height: 30px;
 width: 800px;
 border-radius: 4px;
