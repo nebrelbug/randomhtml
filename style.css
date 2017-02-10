@@ -16,8 +16,13 @@
   margin: 0px;
 }
 
-ul {
-  
+.menuItem {
+  text-align: center;
+  border: 1px solid;
+}
+
+.menuItem:hover {
+  background: Blue;
 }
   
 h1 {
