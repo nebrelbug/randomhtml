@@ -14,14 +14,14 @@
 
 .navBar {
   margin: 0px;
+  border: 1px solid;
 }
 
 .menuItem {
   text-align: center;
-  border: 1px solid;
 }
 
-.menuItem:hover {
+.navBar:hover {
   background: Blue;
 }
   
