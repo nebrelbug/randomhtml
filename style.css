@@ -15,10 +15,12 @@
 .navBar {
   margin: 0px;
   border: 1px solid;
+  padding: 10px;
 }
 
 .menuItem {
   text-align: center;
+  padding: 10px;
 }
 
 .navBar:hover {
