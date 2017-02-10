@@ -1,4 +1,4 @@
-p {
+.text {
 
   font-family: Arial;
   text-align: center;
@@ -30,15 +30,6 @@ h1 {
 
 #homeHeader {
   
-  
-}
-
-#homeParagraph {
-  width: 600px;
-  margin: auto;
-  border: 1px solid Black;
-  border-radius: 4px;
-  background-color: White;
   
 }
 
