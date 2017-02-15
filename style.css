@@ -11,21 +11,6 @@
   border-radius: 4px;
   background-color: White;
 }
-
-.navBar {
-  margin: 0px;
-  border: 1px solid;
-  padding-left: 10px;
-}
-
-.menuItem {
-  text-align: center;
-  padding-left: 10px;
-}
-
-.navBar:hover {
-  background: Blue;
-}
   
 h1 {
   text-align: center;
@@ -43,12 +28,11 @@ h1 {
   
 }
 
-#homeHeader {
-  
-  
-}
-
 h1:hover {
   background-color: LightGray;
+}
+
+html {
+  align-items: center;
 }
 
