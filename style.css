@@ -24,6 +24,12 @@ h1 {
 
 }
 
+.navbar {
+  margin: auto;
+  padding: 10;
+  display: inline-block;
+  
+}
 #homeLink {
   font-size: 18px
   border: 1px solid;
