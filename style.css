@@ -38,7 +38,7 @@ h1 {
 
 #homeLink {
   font-size: 18px
-  border: 1px solid;
+  border: 1px solid rgb(0,0,0);
   border-radius: 3px;
   text-align: center;
   padding: 30px 0px;
@@ -47,7 +47,7 @@ h1 {
 
 #aboutLink {
   font-size: 18px
-  border: 1px solid;
+  border: 1px solid rgb(0,0,0);
   border-radius: 3px;
   margin: auto;
   text-align: center;
