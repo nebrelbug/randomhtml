@@ -10,6 +10,7 @@
   border: 1px solid Black;
   border-radius: 4px;
   background-color: White;
+  overflow-y: auto;
 }
   
 h1 {
@@ -27,7 +28,7 @@ h1 {
   font-size: 18px
   border: 1px solid;
   border-radius: 3px;
-  align-items: center;
+  margin: auto;
   
 }
 
@@ -35,7 +36,7 @@ h1 {
   font-size: 18px
   border: 1px solid;
   border-radius: 3px;
-  align-items: center;
+  margin: auto;
   
 }
 
