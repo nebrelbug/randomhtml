@@ -26,8 +26,9 @@ h1 {
 
 .navbar {
   margin: auto;
-  padding: 10;
+  padding: 30px;
   width: 100%;
+  display: inline-block;
   
 }
 #homeLink {
