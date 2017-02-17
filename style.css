@@ -14,13 +14,31 @@
   
 h1 {
   text-align: center;
+  align-items: center;
   font-family: Arial;
   border: 1px solid Black;
   border-radius: 4px;
   background-color: White;
-  width: 250px;
+  width: 50%;
 
 }
+
+#homeLink {
+  font-size: 18px
+  border: 1px solid;
+  border-radius: 3px;
+  align-items: center;
+  
+}
+
+#aboutLink {
+  font-size: 18px
+  border: 1px solid;
+  border-radius: 3px;
+  align-items: center;
+  
+}
+
 
 * {
   
