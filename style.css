@@ -21,21 +21,27 @@ h1 {
   border-radius: 4px;
   background-color: White;
   width: 50%;
+  margin: auto;
 
 }
 
 .navbar {
-  margin: auto;
   padding: 30px;
   width: 100%;
   display: inline-block;
   
 }
+
+#homeHeaderUl {
+  padding: 14px;
+}
+
 #homeLink {
   font-size: 18px
   border: 1px solid;
   border-radius: 3px;
   text-align: center;
+  padding: 30px 0px;
   
 }
 
@@ -45,6 +51,7 @@ h1 {
   border-radius: 3px;
   margin: auto;
   text-align: center;
+  padding: 30px 0px;
   
 }
 
