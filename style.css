@@ -27,13 +27,14 @@ h1 {
 .navbar {
   margin: auto;
   padding: 10;
+  width: 100%;
   
 }
 #homeLink {
   font-size: 18px
   border: 1px solid;
   border-radius: 3px;
-  margin: auto;
+  text-align: center;
   
 }
 
@@ -42,6 +43,7 @@ h1 {
   border: 1px solid;
   border-radius: 3px;
   margin: auto;
+  text-align: center;
   
 }
 
