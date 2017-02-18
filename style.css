@@ -40,7 +40,11 @@ h1 {
 }
 
 #homeHeaderUl {
-  padding-left: 14px;
+  padding-left: 30px;
+}
+
+#aboutHeaderUl {
+  padding-left: 30px;
 }
 
 #homeLink {
