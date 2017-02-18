@@ -32,6 +32,13 @@ h1 {
   font-size: 30px;
 }
 
+.navbar a {
+  font-size: 30px;
+  border: 1px solid;
+  border-color: rgb(0,0,0);
+  border-radius: 3px;
+}
+
 #homeHeaderUl {
   padding-left: 14px;
 }
