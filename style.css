@@ -26,14 +26,14 @@ h1 {
 }
 
 .navbar {
-  padding: 30px;
+  padding-left: 30px;
   width: 100%;
   display: inline-block;
   
 }
 
 #homeHeaderUl {
-  padding: 14px;
+  padding-left: 14px;
 }
 
 #homeLink {
