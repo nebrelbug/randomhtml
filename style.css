@@ -11,6 +11,7 @@
   border-radius: 4px;
   background-color: White;
   overflow-y: auto;
+  font-size: 150%
 }
   
 h1 {
@@ -22,6 +23,7 @@ h1 {
   background-color: White;
   width: 50%;
   margin: auto;
+  font-size: 100%;
 
 }
 
@@ -29,11 +31,11 @@ h1 {
   padding-left: 30px;
   width: 100%;
   display: inline-block;
-  font-size: 200%;
+  font-size: 100%;
 }
 
 .navbar a {
-  font-size: 30px;
+  font-size: 100%;
   border: 1px solid;
   border-color: rgb(0,0,0);
   border-radius: 3px;
@@ -48,7 +50,7 @@ h1 {
 }
 
 #homeLink {
-  font-size: 200%;
+  font-size: 100%;
   border: 1px solid;
   border-color: rgb(0,0,0);
   border-radius: 3px;
@@ -58,7 +60,7 @@ h1 {
 }
 
 #aboutLink {
-  font-size: 200%;
+  font-size: 100%;
   border: 1px solid;
   border-color: rgb(0,0,0);
   border-radius: 3px;
