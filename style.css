@@ -29,6 +29,7 @@ h1 {
 
 #homeHeaderUl {
   padding-left: 30px;
+  align-items: center;
 }
 
 #aboutHeaderUl {
@@ -59,7 +60,7 @@ html {
   background: White;
   border: 1px solid;
   border-color: rgb(0,0,0);
-  border-radius: 2%;
+  border-radius: 10%;
   display: inline;
   padding-left: .5%;
   padding-right: .5%;
@@ -70,6 +71,11 @@ html {
 }
 
 .navItem li:hover {
+  background: Grey;
+  color: White;
+}
+
+.navItem a:hover {
   background: Grey;
   color: White;
 }
