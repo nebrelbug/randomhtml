@@ -27,20 +27,6 @@ h1 {
 
 }
 
-.navbar {
-  padding-left: 30px;
-  width: 100%;
-  display: inline-block;
-  font-size: 100%;
-}
-
-.navbar a {
-  font-size: 100%;
-  border: 1px solid;
-  border-color: rgb(0,0,0);
-  border-radius: 3px;
-}
-
 #homeHeaderUl {
   padding-left: 30px;
 }
@@ -49,29 +35,7 @@ h1 {
   padding-left: 30px;
 }
 
-#homeLink {
-  font-size: 100%;
-  border: 1px solid;
-  border-color: rgb(0,0,0);
-  border-radius: 3px;
-  text-align: center;
-  padding: 30px 0px;
-  
-}
-
-#aboutLink {
-  font-size: 100%;
-  border: 1px solid;
-  border-color: rgb(0,0,0);
-  border-radius: 3px;
-  margin: auto;
-  text-align: center;
-  padding: 30px 0px;
-  
-}
-
-
-* {
+body {
   
   background: LightGray;
   
@@ -97,5 +61,13 @@ html {
   border-color: rgb(0,0,0);
   border-radius: 2%;
   display: inline;
+}
+.navItem a {
+  background: White;
+}
+
+.navItem a:hover {
+  background: Grey;
+  color: White;
 }
 
