@@ -64,12 +64,21 @@ html {
   padding-left: .5%;
   padding-right: .5%;
 }
+
 .navItem a {
   background: White;
 }
 
-.navItem a:hover {
+.navItem li:hover {
   background: Grey;
   color: White;
+}
+
+#navHome {
+  margin-left: 39.5%;
+}
+
+#navAbout {
+  margin-right: 39.5%;
 }
 
