@@ -87,4 +87,15 @@ html {
 
 .homeText {
   background: White;
+}
+
+.navItem {
+  width: 10%;
+  height: 10%;
+  background: White;
+  border: 1px solid;
+  border-color: rgb(0,0,0);
+  border-radius: 2%;
+  display: inline;
+}
 
