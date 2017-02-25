@@ -71,6 +71,7 @@ html {
   text-decoration: none;
   margin: 10px auto 10px auto;
   font-size: 130%;
+  margin-bottom: 10px;
 }
 
 .navItem:hover {
