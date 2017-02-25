@@ -7,11 +7,15 @@
   min-height: 30px;
   max-height: 1000px;
   margin: auto;
-  border: 1px solid Black;
-  border-radius: 4px;
   background-color: White;
   overflow-y: auto;
   font-size: 150%
+}
+
+#jumbotron {
+  border: 1px solid Black;
+  border-radius: 4px;
+  margin-top: 4%;
 }
   
 h1 {
