@@ -1,4 +1,4 @@
-#homeText {
+.white {
 
   font-family: Arial;
   text-align: center;
@@ -28,12 +28,6 @@ h1 {
   color: Black;
   text-decoration: none;
 
-}
-
-#homeHeaderUl {
-  padding-left: 30px;
-  align-items: center;
-  margin: auto;
 }
 
 body {
@@ -70,18 +64,7 @@ html {
   font-size: 130%;
 }
 
-.navItem a {
-  background: White;
-  text-decoration: none;
-  color: Black;
-}
-
 .navItem:hover {
-  background: Grey;
-  color: White;
-}
-
-.navItem a:hover {
   background: Grey;
   color: White;
 }
