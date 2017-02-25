@@ -62,6 +62,7 @@ html {
   display: inline;
   padding-left: .5%;
   padding-right: .5%;
+  text-decoration: none;
 }
 
 .navItem a {
@@ -82,4 +83,8 @@ html {
 
 #navHome {
   margin-left: 40%;
+}
+
+#navAbout {
+  margin-right: 40%;
 }
