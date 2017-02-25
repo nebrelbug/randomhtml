@@ -55,12 +55,14 @@ html {
 
 .navItem {
   width: 10%;
-  height: 10%;
+  height: 7%;
   background: White;
   border: 1px solid;
   border-color: rgb(0,0,0);
   border-radius: 2%;
   display: inline;
+  padding-left: .5%;
+  padding-right: .5%;
 }
 .navItem a {
   background: White;
