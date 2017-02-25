@@ -9,7 +9,13 @@
   margin: auto;
   background-color: White;
   overflow-y: auto;
-  font-size: 150%
+}
+
+.white h2 {
+  font-size: 150%;
+}
+.white p {
+  font-size: 150%;
 }
 
 #homeJumbotron {
@@ -48,10 +54,6 @@ html {
   align-items: center;
 }
 
-.homeText {
-  background: White;
-}
-
 .navItem {
   width: 10%;
   height: 7%;
@@ -63,8 +65,7 @@ html {
   padding-left: .5%;
   padding-right: .5%;
   text-decoration: none;
-  margin-top: 3%;
-  margin-bottom: 5%;
+  margin: 10px auto 10px auto;
   font-size: 130%;
 }
 
