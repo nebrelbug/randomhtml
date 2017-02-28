@@ -87,6 +87,7 @@ html {
 
 #navHome {
   font-size: 200%;
+  margin-top: 3%;
 }
 
 #navAbout {
@@ -105,8 +106,9 @@ a {
 }
   
 #homeFooter {
-  background-color: LightBlue;
+  background-color: White;
   height: 15%;
+  border-top: 1px solid rgb(0,0,0);
 }
 #learnMore {
   text-align: center;
