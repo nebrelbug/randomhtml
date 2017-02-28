@@ -109,7 +109,7 @@ a {
   background-color: White;
   height: 15%;
   border-top: 1px solid rgb(0,0,0);
-  width: auto;
+  width: 100vw;
   margin: 0%;
 }
 #learnMore {
