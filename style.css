@@ -104,3 +104,14 @@ a {
   margin: auto;
 }
   
+#homeFooter {
+  background-color: LightBlue;
+  height: 15%;
+}
+#learnMore {
+  text-align: center;
+}
+#licensing {
+  text-align: center;
+}
+  
