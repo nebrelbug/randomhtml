@@ -1,3 +1,2 @@
 # nebrelbug.github.io
-My Website
-I'm working on an AI chatbot
+This website contains html experiments including using Javascript to create an AI chatbot.
