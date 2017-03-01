@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="1011911140403-0hvgoqj3s37j5af2opiocltspqhgqbnf.apps.googleusercontent.com">
-<meta name=viewport content="width=device-width, initial-scale=1">
-<link href="nebrelbug.github.io/style.css" type="text/css" rel="stylesheet">
-<title>Sign in to BenGubler.com and access full features</title>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-92066007-1', 'auto');
-  ga('send', 'pageview');
-</script>
-  <meta name="description" content="This is Ben Gubler's personal website.">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-</head>
-<body>
-  <h1 class= "header" id= "homeHeader"><a href="http://www.bengubler.com">Sign in to BenGubler.com</a></h1>
-  <div class="g-plusone"></div>
-  <div class= "navBar" id= "homeNavBar">
-    <a class="navItem" id="navHome" href="http://www.bengubler.com">Home</a>
-    <a class="navItem" id="navAbout" href="http://www.bengubler.com/about.html">About Me</a>
-  </div>
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
-<a href="#" onclick="signOut();">Sign out</a>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign in to BenGubler.com</title> 
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDj097NtzmxKe7lK6zRVyyvPU7-rQGkqCQ",
+    authDomain: "ben-gublers-website.firebaseapp.com",
+    databaseURL: "https://ben-gublers-website.firebaseio.com",
+    storageBucket: "ben-gublers-website.appspot.com",
+    messagingSenderId: "1011911140403"
+  };
+  firebase.initializeApp(config);
 </script>
-<br>
-  <br>
-  <br>
-  <br>
-  <div class= "footer" id="homeFooter">
-    <br>
-    <p id="licensing">Copyright Ben Gubler</p>
-    <p id="learnMore"><a href="http://www.bengubler.com">Learn More</a></p>
-    <p id="version">V 1.68</p>
-    <br>
-  </div>
-</body>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <h1>Welcome to Ben Gubler's Website</h1>
+    <div id="firebaseui-auth-container"></div>
+  </body>
 </html>
