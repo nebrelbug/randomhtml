@@ -21,10 +21,10 @@ var userInput = "0";
 function getAnswer() {
   var response = document.getElementById("response");
   if (userInputLower === "hi") {
-    response.textContent = "Hi to you, too"
+    response.innerHTML = "Hi to you, too"
   } else {
     if (userInputLower === "cookies") {
-      response.textContent = "Cake!"
+      response.innerHTML = "Cake!"
   }
 }
 getAnswer();
