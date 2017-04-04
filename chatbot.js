@@ -6,7 +6,8 @@ var userInput = "0";
     // callback 
     var onButtonClick = function() {
         clickerButton.textContent = "Oh wow, you clicked me!";
-      userInput = document.getElementById("userInput").value;
+      userInputRaw = document.getElementById("userInput").value;
+      var userInputLower = userInputRaw.toLowerCase();
       getAnswer();
     };
     // 3. Add the event listener for the element and function
@@ -19,10 +20,10 @@ var userInput = "0";
 
 function getAnswer() {
   var response = document.getElementById("response");
-  if (userInput.lower === "hi") {
+  if (userInputLower === "hi") {
     response.textContent = "Hi to you, too"
   } else {
-    if (userInput.lower === "cookies") {
+    if (userInputLower === "cookies") {
       response.textContent = "Cake!"
   }
 }
