@@ -1,5 +1,5 @@
 var userInput = document.getElementById("userInput").value;
-var response = document.getElementById("response);
+var response = document.getElementById("response");
 function getAnswer() {
   if (userInput.lower === "hi") {
     response.textContent = "Hi to you, too"
