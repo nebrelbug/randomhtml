@@ -14,8 +14,11 @@
 
 //setting up variables....
 
+void setup () {
 
 size(400,400);
+}
+
 var difficultyLevel = "Not Defined Yet";
 var alive = "not yet";
 var timeLeft = "invalid";
@@ -32,11 +35,11 @@ xv: 0,
 yv: 0,
 xpos: 200,
 ypos: 200,
-};
+}
 
 textAlign(CENTER, CENTER);
 
-void homeButtonPress = function () {
+void homeButtonPress () {
     if (mousePressed) {
         if (mouseX > 0 && mouseX < 40) {
             if (mouseY > 380 && mouseY < 400) {
@@ -44,9 +47,9 @@ void homeButtonPress = function () {
             }
         }
     }
-};
+}
 
-void drawHomeScreen = function () {
+void drawHomeScreen () {
     background(255, 255, 255);
         fill(0, 0, 0);
         textSize(50);
@@ -58,9 +61,9 @@ void drawHomeScreen = function () {
         textSize(20);
         text("EASY", 100, 260);
         text("HARD", 300, 260);
-};
+}
 
-void playButtonPressed = function () {
+void playButtonPressed () {
     if (mousePressed) {
         if(mouseY > 240 && mouseY < 280) {
             if (mouseX > 50 && mouseX < 150) {
@@ -74,9 +77,9 @@ void playButtonPressed = function () {
             }
         }
     }
-};
+}
 
-void restartButtonPress = function () {
+void restartButtonPress () {
     if (mousePressed) {
         if(mouseY > 280 && mouseY < 320) {
             if (mouseX > 150 && mouseX < 250) {
@@ -84,19 +87,19 @@ void restartButtonPress = function () {
             }
         }
     }
-};
+}
 
 var keys = [];
 
-void keyPressed = function() { 
+void keyPressed () { 
   keys[keyCode] = true;
-};
+}
  
-void keyReleased = function() { 
+void keyReleased () { 
   keys[keyCode] = false; 
-};
+}
 
-void keyTester = function () {
+void keyTester () {
     if (keyIsPressed && keys[UP]) { //this checks if up arrow is pressed
         Player.yv = Player.yv - 1;
     }
@@ -109,9 +112,9 @@ void keyTester = function () {
     if (keyIsPressed && keys[RIGHT]) {
         Player.xv = Player.xv + 1;
     }
-};
+}
 
-void touchTester = function () {
+void touchTester () {
     if (dist(starX, starY, Player.xpos, Player.ypos)<12) {
         score = score + 1;
         starOn = 0;
@@ -119,14 +122,14 @@ void touchTester = function () {
     }
 };
 
-void timeLimit = function () {
+void timeLimit () {
             text("Time: " + timeLeft, 50, 50);
             if (timeLeft<0) {
                 alive = 0;
             }
-        };
+        }
 
-void movement = function () {
+void movement () {
     if (Player.xpos > 385) {
         Player.xpos = 2*385 - Player.xpos;
         Player.xv = -0.3*Player.xv;
@@ -147,18 +150,18 @@ void movement = function () {
     Player.xpos = Player.xpos + Player.xv;
     Player.xv = Player.xv * 0.9; //Slow it down--will never reach zero, but get infinitesmally close
     Player.yv = Player.yv * 0.9;
-};
+}
 
-void drawPlayer = function () {
+void drawPlayer () {
     fill(255, 255, 255);
     ellipse(Player.xpos, Player.ypos, 30, 30); //Draws circle
     keyTester();//Check for keys pressed
     movement();//Change position of circle
     
     
-};
+}
 
-    void dispDeathScreen = function () {
+    void dispDeathScreen () {
         background(0,0,0);
         fill(255, 255, 255);
         textSize(30);
@@ -171,16 +174,16 @@ void drawPlayer = function () {
         fill(0, 0, 0);
         textSize(20);
         text("RESTART", 200, 300);
-    };
+    }
 
-    void dispScore = function () {
+    void dispScore () {
         fill(255, 255, 255);
         textSize(20);
         text("Score: " + score, 50, 25);
         
-    };
+    }
     
-    void dispStar = function () {
+    void dispStar () {
         if (starOn === 0 ) {
         fill(255, 242, 0);
         starX = random(15,385);
@@ -193,9 +196,10 @@ void drawPlayer = function () {
         starOn = 1;
         }
             
-    };
+    }
+    
 //Draw function--objects make it possible to add other players in the future
-void draw = function() {
+void draw () {
     m = millis();//sets m to the # of milliseconds
     if (alive === 1) { //IF PLAYER IS ALIVE
     background(0, 0, 0); //Background
@@ -216,4 +220,4 @@ void draw = function() {
         drawHomeScreen();
         playButtonPressed();
     }
-};
+}
