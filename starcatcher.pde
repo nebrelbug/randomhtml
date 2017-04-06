@@ -14,6 +14,8 @@
 
 //setting up variables....
 
+
+size(400,400);
 var difficultyLevel = "Not Defined Yet";
 var alive = "not yet";
 var timeLeft = "invalid";
@@ -193,7 +195,7 @@ var drawPlayer = function () {
             
     };
 //Draw function--objects make it possible to add other players in the future
-var draw = function() {
+void draw = function() {
     m = millis();//sets m to the # of milliseconds
     if (alive === 1) { //IF PLAYER IS ALIVE
     background(0, 0, 0); //Background
