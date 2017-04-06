@@ -1,14 +1,10 @@
 //By nebrelbug
 
-//Thanks to Drew Bent's Multiple Key Presses and Firedrake969 for giving me the basic movement syntax to program the player. I converted it all into Object-Oriented Format, making it possible to add other players in the future and allowing for a much more reusable format. Also, thanks to John Ingram's spin-off of that project for helping me with the boundaries. Because this isn't really a spin-off of those projects, I didn't create it as a project but am giving credit up here.
-
 //Use the arrow keys to move
 
 //Catch the stars!
 
 //More levels coming soon
-
-//**Feel free to vote up if you like this**:)
 
 //I'm going to embed this in my website.
 
@@ -37,7 +33,7 @@ xv: 0,
 yv: 0,
 xpos: 200,
 ypos: 200,
-}
+};
 
 void homeButtonPress () {
     if (mousePressed) {
