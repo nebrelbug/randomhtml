@@ -57,8 +57,11 @@ starX = random(15,385);
 starY = random(15,385);
 
     background(255, 255, 255);
-        fill(0, 0, 0);
+        stroke(0,0,0);
+        noFill();
         rect(1,1,399,399);
+        fill(0,0,0);
+        noStroke();
         textSize(50);
         text("STAR CATCHER", 200, 115);
         fill(0, 0, 0);
