@@ -36,7 +36,7 @@ ypos: 200,
 
 textAlign(CENTER, CENTER);
 
-var homeButtonPress = function () {
+void homeButtonPress = function () {
     if (mousePressed) {
         if (mouseX > 0 && mouseX < 40) {
             if (mouseY > 380 && mouseY < 400) {
@@ -46,7 +46,7 @@ var homeButtonPress = function () {
     }
 };
 
-var drawHomeScreen = function () {
+void drawHomeScreen = function () {
     background(255, 255, 255);
         fill(0, 0, 0);
         textSize(50);
@@ -60,7 +60,7 @@ var drawHomeScreen = function () {
         text("HARD", 300, 260);
 };
 
-var playButtonPressed = function () {
+void playButtonPressed = function () {
     if (mousePressed) {
         if(mouseY > 240 && mouseY < 280) {
             if (mouseX > 50 && mouseX < 150) {
@@ -76,7 +76,7 @@ var playButtonPressed = function () {
     }
 };
 
-var restartButtonPress = function () {
+void restartButtonPress = function () {
     if (mousePressed) {
         if(mouseY > 280 && mouseY < 320) {
             if (mouseX > 150 && mouseX < 250) {
@@ -88,15 +88,15 @@ var restartButtonPress = function () {
 
 var keys = [];
 
-var keyPressed = function() { 
+void keyPressed = function() { 
   keys[keyCode] = true;
 };
  
-var keyReleased = function() { 
+void keyReleased = function() { 
   keys[keyCode] = false; 
 };
 
-var keyTester = function () {
+void keyTester = function () {
     if (keyIsPressed && keys[UP]) { //this checks if up arrow is pressed
         Player.yv = Player.yv - 1;
     }
@@ -111,7 +111,7 @@ var keyTester = function () {
     }
 };
 
-var touchTester = function () {
+void touchTester = function () {
     if (dist(starX, starY, Player.xpos, Player.ypos)<12) {
         score = score + 1;
         starOn = 0;
@@ -119,14 +119,14 @@ var touchTester = function () {
     }
 };
 
-var timeLimit = function () {
+void timeLimit = function () {
             text("Time: " + timeLeft, 50, 50);
             if (timeLeft<0) {
                 alive = 0;
             }
         };
 
-var movement = function () {
+void movement = function () {
     if (Player.xpos > 385) {
         Player.xpos = 2*385 - Player.xpos;
         Player.xv = -0.3*Player.xv;
@@ -149,7 +149,7 @@ var movement = function () {
     Player.yv = Player.yv * 0.9;
 };
 
-var drawPlayer = function () {
+void drawPlayer = function () {
     fill(255, 255, 255);
     ellipse(Player.xpos, Player.ypos, 30, 30); //Draws circle
     keyTester();//Check for keys pressed
@@ -158,7 +158,7 @@ var drawPlayer = function () {
     
 };
 
-    var dispDeathScreen = function () {
+    void dispDeathScreen = function () {
         background(0,0,0);
         fill(255, 255, 255);
         textSize(30);
@@ -173,14 +173,14 @@ var drawPlayer = function () {
         text("RESTART", 200, 300);
     };
 
-    var dispScore = function () {
+    void dispScore = function () {
         fill(255, 255, 255);
         textSize(20);
         text("Score: " + score, 50, 25);
         
     };
     
-    var dispStar = function () {
+    void dispStar = function () {
         if (starOn === 0 ) {
         fill(255, 242, 0);
         starX = random(15,385);
