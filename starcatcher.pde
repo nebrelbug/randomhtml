@@ -37,7 +37,7 @@ ypos: 200,
 textAlign(CENTER, CENTER);
 
 var homeButtonPress = function () {
-    if (mouseIsPressed) {
+    if (mousePressed) {
         if (mouseX > 0 && mouseX < 40) {
             if (mouseY > 380 && mouseY < 400) {
                 Program.restart();
@@ -61,7 +61,7 @@ var drawHomeScreen = function () {
 };
 
 var playButtonPressed = function () {
-    if (mouseIsPressed) {
+    if (mousePressed) {
         if(mouseY > 240 && mouseY < 280) {
             if (mouseX > 50 && mouseX < 150) {
                 alive = 1;
@@ -77,7 +77,7 @@ var playButtonPressed = function () {
 };
 
 var restartButtonPress = function () {
-    if (mouseIsPressed) {
+    if (mousePressed) {
         if(mouseY > 280 && mouseY < 320) {
             if (mouseX > 150 && mouseX < 250) {
                 Program.restart();    
