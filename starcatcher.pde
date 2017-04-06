@@ -59,7 +59,7 @@ starY = random(15,385);
     background(255, 255, 255);
         stroke(0,0,0);
         noFill();
-        rect(1,1,399,399);
+        rect(1,1,398,398);
         fill(0,0,0);
         noStroke();
         textSize(50);
