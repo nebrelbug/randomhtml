@@ -43,13 +43,23 @@ void homeButtonPress () {
     if (mousePressed) {
         if (mouseX > 0 && mouseX < 40) {
             if (mouseY > 380 && mouseY < 400) {
-                Program.restart();
+                alive = "not yet";
             }
         }
     }
 }
 
 void drawHomeScreen () {
+difficultyLevel = "Not Defined Yet";
+timeLeft = "invalid";
+bonusTime = 5000;
+startTime = 0;
+score = 0;
+m = millis();
+starOn = 0;
+starX = random(15,385);
+starY = random(15,385);
+
     background(255, 255, 255);
         fill(0, 0, 0);
         textSize(50);
@@ -83,7 +93,7 @@ void restartButtonPress () {
     if (mousePressed) {
         if(mouseY > 280 && mouseY < 320) {
             if (mouseX > 150 && mouseX < 250) {
-                Program.restart();    
+                alive = "not yet";    
             }
         }
     }
