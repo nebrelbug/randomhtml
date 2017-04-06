@@ -17,6 +17,8 @@
 void setup () {
 
 size(400,400);
+
+textAlign(CENTER, CENTER);
 }
 
 var difficultyLevel = "Not Defined Yet";
@@ -36,8 +38,6 @@ yv: 0,
 xpos: 200,
 ypos: 200,
 }
-
-textAlign(CENTER, CENTER);
 
 void homeButtonPress () {
     if (mousePressed) {
