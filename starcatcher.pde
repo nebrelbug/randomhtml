@@ -100,16 +100,16 @@ void keyReleased () {
 }
 
 void keyTester () {
-    if (keyIsPressed && keys[UP]) { //this checks if up arrow is pressed
+    if (keyPressed && keys[UP]) { //this checks if up arrow is pressed
         Player.yv = Player.yv - 1;
     }
-    if (keyIsPressed && keys[DOWN]) {
+    if (keyPressed && keys[DOWN]) {
         Player.yv = Player.yv + 1;
     }
-    if (keyIsPressed && keys[LEFT]) {
+    if (keyPressed && keys[LEFT]) {
         Player.xv = Player.xv - 1;
     }
-    if (keyIsPressed && keys[RIGHT]) {
+    if (keyPressed && keys[RIGHT]) {
         Player.xv = Player.xv + 1;
     }
 }
