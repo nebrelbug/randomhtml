@@ -5,7 +5,6 @@ var userInput = "0";
     // 2. Define the function that will respond to the event.
     // callback 
     var onButtonClick = function() {
-        clickerButton.textContent = "Oh wow, you clicked me!";
       userInputRaw = document.getElementById("userInput").value;
       var userInputLower = userInputRaw.toLowerCase();
       getAnswer();
