@@ -1,3 +1,4 @@
+submitButton.addEventListener("click", onButtonClick);
 var userInputRaw = "undefined";
 var userInputLower = userInputRaw;    
 
@@ -25,7 +26,7 @@ function getAnswer() {
     };
     // 3. Add the event listener for the element and function
     // anonymous "inline"
-    submitButton.addEventListener("click", onButtonClick);
+
     
 
 
