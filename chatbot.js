@@ -7,10 +7,10 @@ var submitButton = document.getElementById("submit");
 function getAnswer() {
   var response = document.getElementById("response");
   if (userInputLower === "hi") {
-    response.innerHTML = "Hi to you, too"
+    response.innerHTML = "Hi to you, too";
   } else {
     if (userInputLower === "cookies") {
-      response.innerHTML = "Cake!"
+      response.innerHTML = "Cake!";
   }
 }
 
