@@ -1,4 +1,4 @@
-document.getElementById("submit").addEventListener("click", onSubmissionClick);
+document.getElementById("submit").onclick = onSubmissionClick;
 var response = document.getElementById("response");
 
 function onSubmissionClick() {
