@@ -1,6 +1,6 @@
-document.getElementById("submit").addEventListener("click", onButtonClick);
+document.getElementById("submit").addEventListener("click", onSubmissionClick);
 var response = document.getElementById("response");
 
-function onButtonClick() {
+function onSubmissionClick() {
   response.innerHTML = "You clicked the button!";
 }
