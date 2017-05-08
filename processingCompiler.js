@@ -1,6 +1,3 @@
-
-var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, sketch);
 var processingCode = "void setup () {
 
 size(400,400);
@@ -224,3 +221,5 @@ void draw () {
 }";
 var jsCode = Processing.compile(processingCode).sourceCode;
 $("compiled").text(jsCode);
+var canvas = document.getElementById("canvas");
+var processingInstance = new Processing(canvas, processingCode);
