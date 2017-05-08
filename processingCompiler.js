@@ -1,5 +1,5 @@
 
-var canvas = document.getElementById("canvas1");
+var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketch);
 var processingCode = "void setup () {
 
