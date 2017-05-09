@@ -46,6 +46,10 @@ processing.draw = function() {
 }
 }
 
+$(document).ready(function() {
+var canvas = document.getElementById("canvas");
+var processingInstance = new Processing(canvas, processingCode);
+	
 $(document).keydown(function (e) {
     keys[e.which] = true;
 	keyAction();
@@ -55,7 +59,4 @@ $(document).keyup(function (e) {
     delete keys[e.which];
     keyAction();
 });
-$(document).ready(function() {
-var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, processingCode);
 });
