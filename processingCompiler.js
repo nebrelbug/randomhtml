@@ -55,6 +55,7 @@ $(document).keyup(function (e) {
     delete keys[e.which];
     keyAction();
 });
-
+$(document).ready(function() {
 var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, processingCode);
+});
