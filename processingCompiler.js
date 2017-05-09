@@ -15,16 +15,6 @@ var keys = [];
     }
 }
 
-$(document).keydown(function (e) {
-    keys[e.which] = true;
-	keyAction();
-});
-
-$(document).keyup(function (e) {
-    delete keys[e.which];
-    keyAction();
-});
-
 var Player = {
 xv: 0,
 yv: 0,
@@ -55,5 +45,16 @@ processing.draw = function() {
     drawPlayer();
 }
 }
+
+$(document).keydown(function (e) {
+    keys[e.which] = true;
+	keyAction();
+});
+
+$(document).keyup(function (e) {
+    delete keys[e.which];
+    keyAction();
+});
+
 var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, processingCode);
