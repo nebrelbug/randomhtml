@@ -1,104 +1,12 @@
+function sketchProc(processing) {
+
+var xv = 0;
+var yv = 0;
+var xpos = 200;
+var ypos = 200;
 
 var keys = [];
     	function keyAction () {
-    if (keys[38]) { //this checks if up arrow is pressed
-        Player.yv = Player.yv - 1;
-    }
-    if (keys[40]) {
-        Player.yv = Player.yv + 1;
-    }
-    if (keys[37]) {
-        Player.xv = Player.xv - 1;
-    }
-    if (keys[39]) {
-        Player.xv = Player.xv + 1;
-    }
-}
-
-var Player = {
-xv: 0,
-yv: 0,
-xpos: 200,
-ypos: 200,
-}
-
-function movement () {
-    Player.xpos = Player.xpos + Player.xv; //setting the positions to the positions + movement
-    Player.ypos = Player.ypos + Player.yv;
-    Player.xv = Player.xv * 0.9; //slowing it down
-    Player.yv = Player.yv * 0.9;
-}
-
-function sketchProc(processing) {
-
-function drawPlayer () {
-    processing.fill(255, 255, 255);
-    processing.ellipse(Player.xpos, Player.ypos, 30, 30); //moves the circle
-    keyAction();
-    movement();
-    
-}
-
-processing.setup = function() {
-	processing.background(0,0,0);
-	processing.size(400,400);
-}
-	
-processing.draw = function() {
-    processing.background(0, 0, 0); //Background
-    drawPlayer();
-}
-}
-
-$(document).ready(function() {
-var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, sketchProc);
-	
-$(document).keydown(function (e) {
-    keys[e.which] = true;
-	keyAction();
-});
-
-$(document).keyup(function (e) {
-    delete keys[e.which];
-    keyAction();
-});
-});
-
-
-
-
-
-
-
-
-
-
-void setup() {
-size(400,400);
-background(0,0,0);
-}
-var xv = 0;
-var yv = 0;
-
-/*
-userRef.on('child_removed', function(data) {
-  deleteComment(postElement, data.key);
-});
-*/
-
-var thisPlayer = new Player(uid, 200, 200);
-
-var Player = function(uid, xpos, ypos) {
-  this.ID = uid;
-  this.xpos = xpos;
-  this.ypos = ypos;
-     fill(255, 255, 255);
-    ellipse(this.xpos, this.ypos, 30, 30); //moves the circle
-};
-
-var keys = [];
-void keyAction () {
     if (keys[38]) { //this checks if up arrow is pressed
         yv = yv - 1;
     }
@@ -113,37 +21,32 @@ void keyAction () {
     }
 }
 
-$(document).keydown(function (e) {
-    keys[e.which] = true;
-});
-
-$(document).keyup(function (e) {
-    keys[e.which] = false;
-});
-
-Player.prototype.test() {
-keyAction();
-this.movement();
+function Player (ID, xpos, ypos) {
+this.id = ID;
+this.xpos = xpos;
+this.ypos = ypos;
 }
 
+var thisPlayer = new Player(uid, xpos, ypos);
 
-Player.prototype.movement() {
-    this.xpos += xv; //setting the positions to the positions + movement
-    this.ypos += yv;
+Player.prototype.draw () {
+processing.ellipse(this.xpos, this.ypos, 30, 30);
+}
+
+Player.prototype.movement () {
+    keyAction();
+    xpos = xpos + xv; //setting the positions to the positions + movement
+    ypos = ypos + yv;
+    this.xpos = xpos;
+    this.ypos = ypos;
     xv = xv * 0.9; //slowing it down
     yv = yv * 0.9;
-    firebase.database().ref('users/' + uid).set({
-    xpos: this.xpos,
-    ypos: this.ypos
-  });
 }
 
-
-//Draw function--objects make it possible to add other players in the future
-void draw() {
-    background(0, 0, 0); //Background
-    thisPlayer.test();
-    
+processing.draw() {
+	keyAction();
+	thisPlayer.movement();
+		
 var userRef = firebase.database().ref('users/');
 userRef.on('child_added', function(data) {
   var firebase.database().ref('users/' + data) = new Player(data, data.val().xpos, data.val().ypos);
@@ -153,7 +56,27 @@ userRef.on('child_changed', function(data) {
   var firebase.database().ref('users/' + data) = new Player(data, data.val().xpos, data.val().ypos);
 });
 
-    
-    
+var canvas = document.getElementById("canvas");
+var processingInstance = new Processing(canvas, sketchProc);
+	
+	
 }
+$(document).ready(function() {
+
+$(document).keydown(function (e) {
+    keys[e.which] = true;
+	keyAction();
+});
+
+$(document).keyup(function (e) {
+    delete keys[e.which];
+    keyAction();
+});
+});
+
+/*
+userRef.on('child_removed', function(data) {
+  deleteComment(postElement, data.key);
+});
+*/
 
