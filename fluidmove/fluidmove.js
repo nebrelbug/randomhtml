@@ -29,11 +29,11 @@ this.ypos = ypos;
 
 var thisPlayer = new Player(uid, xpos, ypos);
 
-Player.prototype.draw () {
+Player.prototype.draw = function () {
 processing.ellipse(this.xpos, this.ypos, 30, 30);
 }
 
-Player.prototype.movement () {
+Player.prototype.movement = function () {
     keyAction();
     xpos = xpos + xv; //setting the positions to the positions + movement
     ypos = ypos + yv;
