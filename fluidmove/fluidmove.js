@@ -43,7 +43,7 @@ Player.prototype.movement = function () {
     yv = yv * 0.9;
 }
 
-processing.draw() {
+processing.draw = function() {
 	keyAction();
 	thisPlayer.movement();
 		
