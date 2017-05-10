@@ -31,7 +31,7 @@ $(document).keydown(function (e) {
 });
 
 $(document).keyup(function (e) {
-    delete keys[e.which];
+    keys[e.which] = false;
 });
 
 
