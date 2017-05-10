@@ -29,7 +29,7 @@ function movement () {
     Player.yv = Player.yv * 0.9;
 }
 
-function processingCode(processing) {
+function sketchProc(processing) {
 
 function drawPlayer () {
     processing.fill(255, 255, 255);
@@ -39,7 +39,11 @@ function drawPlayer () {
     
 }
 
-//Draw function--objects make it possible to add other players in the future
+processing.setup = function() {
+	processing.background(0,0,0);
+	processing.size(400,400);
+}
+	
 processing.draw = function() {
     processing.background(0, 0, 0); //Background
     drawPlayer();
@@ -48,7 +52,7 @@ processing.draw = function() {
 
 $(document).ready(function() {
 var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, processingCode);
+var processingInstance = new Processing(canvas, sketchProc);
 	
 $(document).keydown(function (e) {
     keys[e.which] = true;
