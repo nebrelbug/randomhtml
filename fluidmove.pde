@@ -9,7 +9,7 @@ xv: 0,
 yv: 0,
 xpos: 200,
 ypos: 200,
-}
+};
 
 var keys = [];
 void keyAction () {
