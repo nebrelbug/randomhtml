@@ -20,7 +20,7 @@
     <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: 'http://www.bengubler.com/signin.html',
+        signInSuccessUrl: 'http://www.bengubler.com/fluidmove.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID
@@ -45,6 +45,12 @@
             var photoURL = user.photoURL;
             var uid = user.uid;
             var providerData = user.providerData;
+            function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    xpos: 200,
+    ypos: 200
+  });
+}
             user.getToken().then(function(accessToken) {
               document.getElementById('sign-in-status').textContent = 'Signed in';
               document.getElementById('sign-in').textContent = 'Sign out';
