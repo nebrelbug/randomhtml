@@ -8,7 +8,7 @@ var ypos = 200;
 var userRef = firebase.database().ref('users/');
 var keys = [];
 
-if (user) {
+if (user!=null) {
   uid = user.uid;
 firebase.database().ref('users/' + uid).set({
     xpos: xpos,
@@ -21,7 +21,7 @@ firebase.database().ref('users/' + uid).set({
 		
 processing.setup = function() {
 	processing.background(0,0,0);
-	processing.size(400,400);
+	processing.size(400,400); 
 };
 
     	function keyAction () {
