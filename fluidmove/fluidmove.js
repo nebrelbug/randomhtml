@@ -1,5 +1,13 @@
 
 $(document).ready(function() {
+var uid;
+var user = firebase.auth().currentUser;
+
+if (user) {
+  uid = user.uid;  
+} else {
+  window.location.replace("http://www.bengubler.com/fluidmove/signin.html");
+}
 	function sketchProc(processing) {
 
 var userRef = firebase.database().ref('users/');
