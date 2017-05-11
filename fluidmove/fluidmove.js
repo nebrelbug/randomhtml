@@ -9,6 +9,11 @@ if (user) {
   window.location.replace("http://www.bengubler.com/fluidmove/signin.html");
 }
 	function sketchProc(processing) {
+		
+processing.setup = function() {
+	processing.background(0,0,0);
+	processing.size(400,400);
+};
 
 var userRef = firebase.database().ref('users/');
 var xv = 0;
