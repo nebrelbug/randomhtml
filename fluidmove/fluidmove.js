@@ -5,7 +5,7 @@ var xv = 0;
 var yv = 0;
 var xpos = 200;
 var ypos = 200;
-
+var userRef = firebase.database().ref('users/');
 var keys = [];
 
 if (user) {
