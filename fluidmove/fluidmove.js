@@ -56,7 +56,7 @@ processing.draw = function() {
 	movement();
 };
 
-userRef.once('value', function(snapshot) {
+changeRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     processing.fill(255);
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
