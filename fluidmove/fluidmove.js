@@ -1,5 +1,6 @@
 function sketchProc(processing) {
 
+var userRef = firebase.database().ref('users/');
 var xv = 0;
 var yv = 0;
 var xpos = 200;
@@ -46,7 +47,15 @@ Player.prototype.movement = function () {
 processing.draw = function() {
 	keyAction();
 	thisPlayer.movement();
-		
+	
+	userRef.once('value', function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+    childSnapshot.key = new Player(childSnapshot.val(), childSnapshot.val().xpos, childSnapshot.val().ypos);
+    childSnapshot.key.draw();
+    // ...
+  });
+});
+/*		
 var userRef = firebase.database().ref('users/');
 userRef.on('child_added', function(data) {
   var firebase.database().ref('users/' + data) = new Player(data, data.val().xpos, data.val().ypos);
@@ -59,7 +68,7 @@ userRef.on('child_changed', function(data) {
 var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketchProc);
 	
-	
+	*/
 }
 $(document).ready(function() {
 
