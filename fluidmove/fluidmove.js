@@ -54,15 +54,14 @@ function movement () {
 processing.draw = function() {
 	keyAction();
 	movement();
-	userRef.once('value', function(snapshot) {
+};
+
+userRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     processing.fill(0,0,0);
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
   });
 });
-};
-
-
 		
 $(document).keydown(function (e) {
     keys[e.which] = true;
