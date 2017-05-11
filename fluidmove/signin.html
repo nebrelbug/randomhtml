@@ -45,12 +45,12 @@
             var photoURL = user.photoURL;
             var uid = user.uid;
             var providerData = user.providerData;
-            function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + uid).set({
+            function writeUserData(userId) {
+  firebase.database().ref('users/' + userId).set({
     xpos: 200,
     ypos: 200
   });
-              writeUserData();
+              writeUserData(uid);
 }
             user.getToken().then(function(accessToken) {
               document.getElementById('sign-in-status').textContent = 'Signed in';
