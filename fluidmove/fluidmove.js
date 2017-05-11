@@ -34,7 +34,7 @@ var thisPlayer = new Player(uid, xpos, ypos);
 
 Player.prototype.draw = function () {
 processing.ellipse(this.xpos, this.ypos, 30, 30);
-}
+};
 
 Player.prototype.movement = function () {
     keyAction();
@@ -44,7 +44,7 @@ Player.prototype.movement = function () {
     this.ypos = ypos;
     xv = xv * 0.9; //slowing it down
     yv = yv * 0.9;
-}
+};
 
 processing.draw = function() {
 	keyAction();
@@ -68,7 +68,7 @@ userRef.on('child_changed', function(data) {
 });
 	
 	*/
-}
+};
 
 var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketchProc);
