@@ -64,14 +64,14 @@ userRef.on('child_added', function(data) {
 userRef.on('child_changed', function(data) {
   var firebase.database().ref('users/' + data) = new Player(data, data.val().xpos, data.val().ypos);
 });
-
-var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, sketchProc);
 	
 	*/
 }
 $(document).ready(function() {
 
+var canvas = document.getElementById("canvas");
+var processingInstance = new Processing(canvas, sketchProc);
+	
 $(document).keydown(function (e) {
     keys[e.which] = true;
 	keyAction();
