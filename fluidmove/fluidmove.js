@@ -5,7 +5,7 @@ var xv = 0;
 var yv = 0;
 var xpos = 200;
 var ypos = 200;
-var userRef = firebase.database().ref('users/');
+var changeRef = firebase.database().ref();
 var keys = [];
 
 if (user!=null) {
@@ -58,7 +58,7 @@ processing.draw = function() {
 
 userRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
-    processing.fill(0,0,0);
+    processing.fill(255);
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
   });
 });
