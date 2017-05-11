@@ -39,23 +39,13 @@ processing.setup = function() {
     }
 }
 
-function Player (xpos, ypos) {
-this.xpos = xpos;
-this.ypos = ypos;
-}
-
-var thisPlayer = new Player(xpos, ypos);
-
-Player.prototype.draw = function () {
 processing.ellipse(this.xpos, this.ypos, 30, 30);
-};
+
 
 function movement () {
     keyAction();
     xpos = xpos + xv; //setting the positions to the positions + movement
     ypos = ypos + yv;
-    this.xpos = xpos;
-    this.ypos = ypos;
     xv = xv * 0.9; //slowing it down
     yv = yv * 0.9;
     firebase.database().ref('users/' + uid).set({
@@ -66,16 +56,12 @@ function movement () {
 
 processing.draw = function() {
 	keyAction();
-	movement();
-	
-	
+	movement();	
 };
 
 userRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
-    childSnapshot.key = new Player(childSnapshot.val().xpos, childSnapshot.val().ypos);
-    childSnapshot.key.draw();
-    // ...
+    processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
   });
 });
 		
