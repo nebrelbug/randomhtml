@@ -57,21 +57,7 @@ processing.draw = function() {
     // ...
   });
 });
-/*		
-var userRef = firebase.database().ref('users/');
-userRef.on('child_added', function(data) {
-  var firebase.database().ref('users/' + data) = new Player(data, data.val().xpos, data.val().ypos);
-});
-
-userRef.on('child_changed', function(data) {
-  var firebase.database().ref('users/' + data) = new Player(data, data.val().xpos, data.val().ypos);
-});
-	
-	*/
 };
-
-var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, sketchProc);
 	
 $(document).keydown(function (e) {
     keys[e.which] = true;
@@ -82,6 +68,11 @@ $(document).keyup(function (e) {
     keys[e.which]= false;
     keyAction();
 });
+};		
+
+var canvas = document.getElementById("canvas");
+var processingInstance = new Processing(canvas, sketchProc);
+	
 });
 
 /*
