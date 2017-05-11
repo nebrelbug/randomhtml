@@ -39,9 +39,6 @@ processing.setup = function() {
     }
 }
 
-processing.ellipse(this.xpos, this.ypos, 30, 30);
-
-
 function movement () {
     keyAction();
     xpos = xpos + xv; //setting the positions to the positions + movement
