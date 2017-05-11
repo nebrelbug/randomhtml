@@ -1,4 +1,6 @@
-function sketchProc(processing) {
+
+$(document).ready(function() {
+	function sketchProc(processing) {
 
 var userRef = firebase.database().ref('users/');
 var xv = 0;
@@ -67,7 +69,6 @@ userRef.on('child_changed', function(data) {
 	
 	*/
 }
-$(document).ready(function() {
 
 var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketchProc);
@@ -78,7 +79,7 @@ $(document).keydown(function (e) {
 });
 
 $(document).keyup(function (e) {
-    delete keys[e.which];
+    keys[e.which]= false;
     keyAction();
 });
 });
