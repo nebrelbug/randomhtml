@@ -53,14 +53,15 @@ function movement () {
 
 processing.draw = function() {
 	keyAction();
-	movement();	
-};
-
-userRef.once('value', function(snapshot) {
+	movement();
+	userRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
   });
 });
+};
+
+
 		
 $(document).keydown(function (e) {
     keys[e.which] = true;
@@ -77,3 +78,4 @@ var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketchProc);
 	
 });
+//V 1.8
