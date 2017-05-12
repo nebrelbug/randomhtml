@@ -103,8 +103,15 @@ var processingInstance = new Processing(canvas, sketchProc);
   }
 });
 	
+$( "#signOut" ).click(function () {
+	firebase.auth().signOut().then(function() {
+  location.reload();
+}).catch(function(error) {
+  // An error happened.
+});
 	
+});
 	
 
 });
-//V 2.5
+//V 2.6
