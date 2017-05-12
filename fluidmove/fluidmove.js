@@ -21,10 +21,10 @@ firebase.auth().signInWithRedirect(provider);
   if (result.credential) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
-    // ...
+    user = result.user;
   }
   // The signed-in user info.
-  user = result.user;
+
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -96,4 +96,4 @@ var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketchProc);
 	
 });
-//V 1.8
+//V 2.1
