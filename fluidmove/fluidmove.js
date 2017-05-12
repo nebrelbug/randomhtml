@@ -76,6 +76,7 @@ processing.draw = function() {
 };
 		
 changeRef.on('value', function(snapshot) {
+   processing.background(0,0,0);
   snapshot.forEach(function(childSnapshot) {
     processing.fill(255);
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
@@ -106,4 +107,4 @@ var processingInstance = new Processing(canvas, sketchProc);
 	
 
 });
-//V 2.4
+//V 2.5
