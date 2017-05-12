@@ -52,7 +52,6 @@ function movement () {
 }
 
 processing.draw = function() {
-	keyAction();
 	movement();
 };
 
