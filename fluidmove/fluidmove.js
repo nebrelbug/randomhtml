@@ -5,7 +5,7 @@ var xv = 0;
 var yv = 0;
 var xpos = 200;
 var ypos = 200;
-var changeRef = firebase.database().ref();
+var changeRef = firebase.database().ref('users/');
 var keys = [];
 	
 $( "#signIn" ).click(function() {
@@ -41,7 +41,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 		
 processing.setup = function() {
 	processing.background(0,0,0);
-	processing.size(400,400); 
+	processing.size(800,800); 
 };
 
     	function keyAction () {
@@ -74,8 +74,8 @@ function movement () {
 processing.draw = function() {
 	movement();
 };
-
-changeRef.once('value', function(snapshot) {
+		
+changeRef.on('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     processing.fill(255);
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
@@ -106,4 +106,4 @@ var processingInstance = new Processing(canvas, sketchProc);
 	
 
 });
-//V 2.3
+//V 2.4
