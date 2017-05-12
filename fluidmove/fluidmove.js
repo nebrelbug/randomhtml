@@ -7,6 +7,7 @@ var xpos = 200;
 var ypos = 200;
 var changeRef = firebase.database().ref('users/');
 var keys = [];
+var userRef;
 	
 $( "#signIn" ).click(function() {
 
@@ -37,6 +38,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 	firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
 	uid = user.uid;
+	userRef = firebase.database().ref('users/'+uid);
     	function sketchProc(processing) {
 		
 processing.setup = function() {
@@ -105,6 +107,7 @@ var processingInstance = new Processing(canvas, sketchProc);
 	
 $( "#signOut" ).click(function () {
 	firebase.auth().signOut().then(function() {
+  userRef.remove();
   location.reload();
 }).catch(function(error) {
   // An error happened.
@@ -114,4 +117,4 @@ $( "#signOut" ).click(function () {
 	
 
 });
-//V 2.6
+//V 2.7
