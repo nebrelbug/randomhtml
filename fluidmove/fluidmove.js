@@ -1,13 +1,15 @@
 $(document).ready(function() {
 var provider = new firebase.auth.GoogleAuthProvider();
 var uid;
-var user;;
 var xv = 0;
 var yv = 0;
 var xpos = 200;
 var ypos = 200;
 var changeRef = firebase.database().ref();
 var keys = [];
+	
+$( "#signIn" ).click(function() {
+
 firebase.auth().signInWithRedirect(provider);
 
 firebase.auth().getRedirectResult().then(function(result) {
@@ -17,7 +19,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     // ...
   }
   // The signed-in user info.
-  var user = result.user;
+  user = result.user;
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -28,8 +30,14 @@ firebase.auth().getRedirectResult().then(function(result) {
   var credential = error.credential;
   // ...
 });
+});
 	
-	function sketchProc(processing) {
+	
+	
+	firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+	uid = user.uid;
+    	function sketchProc(processing) {
 		
 processing.setup = function() {
 	processing.background(0,0,0);
@@ -88,5 +96,14 @@ $(document).keyup(function (e) {
 var canvas = document.getElementById("canvas");
 var processingInstance = new Processing(canvas, sketchProc);
 	
+  } else {
+    // User is signed out.
+    // ...
+  }
 });
-//V 2.2
+	
+	
+	
+
+});
+//V 2.3
