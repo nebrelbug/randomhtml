@@ -1,6 +1,7 @@
 $(document).ready(function() {
+var provider = new firebase.auth.GoogleAuthProvider();
 var uid;
-var user = firebase.auth().currentUser;
+var currentUser = firebase.auth().currentUser;
 var xv = 0;
 var yv = 0;
 var xpos = 200;
@@ -8,14 +9,32 @@ var ypos = 200;
 var changeRef = firebase.database().ref();
 var keys = [];
 
-if (user) {
-  uid = user.uid;
+if (currentUser) {
+  uid = currentUser.uid;
 firebase.database().ref('users/' + uid).set({
     xpos: xpos,
     ypos: ypos
   });
 } else {
-  window.location.replace("http://www.bengubler.com/fluidmove/signin.html");
+firebase.auth().signInWithRedirect(provider);
+	firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
 }
 	function sketchProc(processing) {
 		
