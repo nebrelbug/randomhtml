@@ -8,7 +8,7 @@ var ypos = 200;
 var changeRef = firebase.database().ref();
 var keys = [];
 
-if (user.uid!=null) {
+if (user) {
   uid = user.uid;
 firebase.database().ref('users/' + uid).set({
     xpos: xpos,
