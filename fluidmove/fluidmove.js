@@ -1,6 +1,7 @@
 $(document).ready(function() {
 var provider = new firebase.auth.GoogleAuthProvider();
 var uid;
+var name;
 var xv = 0;
 var yv = 0;
 var xpos = 200;
@@ -38,6 +39,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 	firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
 	uid = user.uid;
+	name = user.displayName;
 	userRef = firebase.database().ref('users/'+uid);
     	function sketchProc(processing) {
 		
@@ -69,7 +71,8 @@ function movement () {
     yv = yv * 0.9;
     firebase.database().ref('users/' + uid).set({
     xpos: xpos,
-    ypos: ypos
+    ypos: ypos,
+    name: name
   });
 }
 
@@ -82,6 +85,9 @@ changeRef.on('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     processing.fill(255);
     processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
+    processing.fill(255,0,0);
+    processing.text(childSnapshot.val().name, childSnapshot.val().xpos, childSnapshot.val().ypos);
+    processing.fill(255);
   });
 });
 		
@@ -106,8 +112,8 @@ var processingInstance = new Processing(canvas, sketchProc);
 });
 	
 $( "#signOut" ).click(function () {
+	userRef.remove();
 	firebase.auth().signOut().then(function() {
-  userRef.remove();
   location.reload();
 }).catch(function(error) {
   // An error happened.
