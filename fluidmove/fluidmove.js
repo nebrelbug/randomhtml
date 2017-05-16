@@ -70,8 +70,8 @@ function movement () {
     xv = xv * 0.9; //slowing it down
     yv = yv * 0.9;
     firebase.database().ref('users/' + uid).set({
-    xpos: xpos,
-    ypos: ypos,
+    xpos: Math.round(xpos),
+    ypos: Math.round(ypos),
     name: name
   });
 }
