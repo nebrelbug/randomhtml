@@ -44,8 +44,9 @@ firebase.auth().getRedirectResult().then(function(result) {
     	function sketchProc(processing) {
 		
 processing.setup = function() {
+	processing.size($(document).width(),$(document).height()-($("#signIn").height()+$("#signOut").height()));
 	processing.background(0,0,0);
-	processing.size($(document).width(),$(document).height()-($("#signIn").height()+$("#signOut").height())); 
+	 
 };
 
     	function keyAction () {
@@ -77,6 +78,7 @@ function movement () {
 }
 
 processing.draw = function() {
+	processing.size($(document).width(),$(document).height()-($("#signIn").height()+$("#signOut").height()));
 	movement();
 };
 		
