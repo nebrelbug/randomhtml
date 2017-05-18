@@ -45,7 +45,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 		
 processing.setup = function() {
 	processing.background(0,0,0);
-	processing.size($(document).width(),$(document).height()); 
+	processing.size($(document).width(),$(document).height()-($("#signin").height()+$("#signout").height()); 
 };
 
     	function keyAction () {
