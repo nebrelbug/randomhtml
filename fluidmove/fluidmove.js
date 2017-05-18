@@ -78,7 +78,6 @@ function movement () {
 }
 
 processing.draw = function() {
-	processing.size($(document).width(),$(document).height()-($("#signIn").height()+$("#signOut").height()));
 	movement();
 };
 		
