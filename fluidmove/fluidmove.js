@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 var provider = new firebase.auth.GoogleAuthProvider();
 var uid;
 var name;
@@ -9,6 +10,11 @@ var ypos = 200;
 var changeRef = firebase.database().ref('users/');
 var keys = [];
 var userRef;
+var sides = 5;
+var radius = 20;
+var fillColor = 255;
+var strokeColor;
+
 	
 $( "#signIn" ).click(function() {
 
@@ -43,6 +49,22 @@ firebase.auth().getRedirectResult().then(function(result) {
 	userRef = firebase.database().ref('users/'+uid);
     	function sketchProc(processing) {
 		
+//POLYGON CREATION
+		
+function polygon(sides, centerX, centerY, radius, fillColor, strokeColor) {
+    processing.fill(fillColor);
+    processing.stroke(strokeColor);
+    var innerAngle = 360/sides;
+    var rotationAngle = innerAngle;
+    processing.beginShape();
+    for (var i = 0; i < sides + 2; i++) {
+        processing.vertex(centerX + radius*Math.sin(rotationAngle), centerY + radius*Math.cos(rotationAngle));
+        rotationAngle = innerAngle * i;
+    }
+    processing.endShape();
+}
+//END POLYGON
+		
 processing.setup = function() {
 	processing.size($(document).width(),$(document).height()-($("#signIn").height()+$("#signOut").height()));
 	processing.background(0,0,0);
@@ -73,7 +95,10 @@ function movement () {
     firebase.database().ref('users/' + uid).set({
     xpos: Math.round(xpos),
     ypos: Math.round(ypos),
-    name: name
+    name: name,
+    fillColor: fillColor,
+    sides: sides,
+    radius: radius
   });
 }
 
@@ -84,8 +109,7 @@ processing.draw = function() {
 changeRef.on('value', function(snapshot) {
    processing.background(0,0,0);
   snapshot.forEach(function(childSnapshot) {
-    processing.fill(255);
-    processing.ellipse(childSnapshot.val().xpos, childSnapshot.val().ypos, 30, 30);
+    polygon(childSnapshot.val().sides, childSnapshot.val().xpos, childSnapshot.val().ypos, childSnapshot.val().radius, childSnapshot.val().fillColor, 0)
     processing.fill(255,0,0);
     processing.text(childSnapshot.val().name, childSnapshot.val().xpos, childSnapshot.val().ypos);
     processing.fill(255);
@@ -124,4 +148,4 @@ $( "#signOut" ).click(function () {
 	
 
 });
-//V 2.7
+//V 2.8
