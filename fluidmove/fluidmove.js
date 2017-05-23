@@ -58,7 +58,7 @@ function polygon(sides, centerX, centerY, radius, fillColor, strokeColor) {
     var rotationAngle = innerAngle;
     processing.beginShape();
     for (var i = 0; i < sides + 2; i++) {
-        processing.vertex(centerX + radius*Math.sin(rotationAngle), centerY + radius*Math.cos(rotationAngle));
+        processing.vertex(centerX + (radius*Math.sin(rotationAngle)), centerY + (radius*Math.cos(rotationAngle)));
         rotationAngle = innerAngle * i;
     }
     processing.endShape();
@@ -148,4 +148,4 @@ $( "#signOut" ).click(function () {
 	
 
 });
-//V 2.8
+//V 2.9
