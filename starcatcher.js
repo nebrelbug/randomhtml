@@ -1,3 +1,6 @@
+var windowWidth = 400;
+var windowHeight = 400;
+
 
 var keys = [];
     	function keyAction () {
@@ -41,13 +44,18 @@ function drawPlayer () {
 
 processing.setup = function() {
 	processing.background(0,0,0);
-	processing.size(400,400);
+	processing.size($(window).width(),$(window).height());
+	windowHeight = $(window).width();
+	windowWidth = $(window).height();
 }
 	
 processing.draw = function() {
     processing.background(0, 0, 0); //Background
     drawPlayer();
 }
+$( window ).resize(function() {
+  processing.size($(window).width()-windowWidth, $(window).height()-windowHeight);
+});
 }
 
 $(document).ready(function() {
