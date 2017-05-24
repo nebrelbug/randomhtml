@@ -1,7 +1,3 @@
-var windowWidth = 400;
-var windowHeight = 400;
-
-
 var keys = [];
     	function keyAction () {
     if (keys[38]) { //this checks if up arrow is pressed
@@ -45,8 +41,6 @@ function drawPlayer () {
 processing.setup = function() {
 	processing.background(0,0,0);
 	processing.size($(window).width(),$(window).height());
-	windowHeight = $(window).height();
-	windowWidth = $(window).width();
 }
 	
 processing.draw = function() {
@@ -54,9 +48,7 @@ processing.draw = function() {
     drawPlayer();
 }
 $( window ).resize(function() {
-  processing.size($(window).width()-windowWidth, $(window).height()-windowHeight);
-  windowWidth = $(window).width();
-  windowHeight = $(window).height();
+  processing.size($(window).width(), $(window).height());
 });
 }
 
