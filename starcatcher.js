@@ -45,8 +45,8 @@ function drawPlayer () {
 processing.setup = function() {
 	processing.background(0,0,0);
 	processing.size($(window).width(),$(window).height());
-	windowHeight = $(window).width();
-	windowWidth = $(window).height();
+	windowHeight = $(window).height();
+	windowWidth = $(window).width();
 }
 	
 processing.draw = function() {
@@ -55,6 +55,8 @@ processing.draw = function() {
 }
 $( window ).resize(function() {
   processing.size($(window).width()-windowWidth, $(window).height()-windowHeight);
+  windowWidth = $(window).width();
+  windowHeight = $(window).height();
 });
 }
 
