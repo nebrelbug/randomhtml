@@ -1,3 +1,5 @@
+
+
 var keys = [];
     	function keyAction () {
     if (keys[38]) { //this checks if up arrow is pressed
@@ -29,10 +31,23 @@ function movement () {
 }
 
 function sketchProc(processing) {
+	
+function polygon (sides, centerX, centerY, radius, fillColor, strokeColor) {
+    processing.fill(fillColor);
+    processing.stroke(strokeColor);
+    var innerAngle = 360/sides;
+    var rotationAngle = innerAngle;
+    processing.beginShape();
+    for (var i = 0; i < sides + 2; i++) {
+        processing.vertex(centerX + radius*Math.sin(rotationAngle), centerY + radius*Math.cos(rotationAngle));
+        rotationAngle = innerAngle * i;
+    }
+    processing.endShape();
+}
 
 function drawPlayer () {
     processing.fill(255, 255, 255);
-    processing.ellipse(Player.xpos, Player.ypos, 30, 30); //moves the circle
+    polygon(5, Player.xpos, Player.ypos, 30, 255, 0); //moves the circle
     keyAction();
     movement();
     
