@@ -39,8 +39,7 @@ function polygon (sides, centerX, centerY, radius, fillColor, strokeColor) {
     var rotationAngle = innerAngle;
     processing.beginShape();
     for (var i = 0; i < sides + 2; i++) {
-        processing.vertex(centerX + radius*Math.sin(rotationAngle), centerY + radius*Math.cos(rotationAngle));
-	console.log(centerX + radius*Math.sin(rotationAngle), centerY + radius*Math.cos(rotationAngle));
+        processing.vertex(centerX + radius*Math.sin(processing.radians(rotationAngle)), centerY + radius*Math.cos(processing.radians(rotationAngle)));
         rotationAngle = innerAngle * i;
 	
     }
