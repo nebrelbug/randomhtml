@@ -57,16 +57,15 @@ function drawPlayer () {
 processing.setup = function() {
 	processing.background(0,0,0);
 	processing.size($(window).width(),$(window).height());
-}
+};
 	
 processing.draw = function() {
     processing.background(0, 0, 0); //Background
     drawPlayer();
-}
+};
 $( window ).resize(function() {
   processing.size($(window).width(), $(window).height());
 });
-}
 
 $(document).ready(function() {
 var canvas = document.getElementById("canvas");
