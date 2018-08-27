@@ -1,3 +1,4 @@
+window.onload = function () {
 var c = document.getElementById("mycanvas");
 function setup() {
   c.width = c.parentElement.clientWidth;
@@ -273,4 +274,5 @@ function getRelativeCoordinates(point, triangulatorBots, numTriBots, rand) {
   timeToComplete = end - start;
   console.timeEnd("getRelativeCoordinates")
   return { X: X, Y: Y };
+}
 }
