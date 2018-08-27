@@ -144,14 +144,18 @@ function draw() {
       drawLine(coordinate.x, coordinate.y, secondcoord.x, secondcoord.y)
     }
   }
+  var msgShown = []
   for (var i = 0; i < botranyds.length; i++) {//Draw lines between each of the botranyds and each other
     var coordinate = botranyds[i];
     coordinate.draw();
     for (var j = 0; j < botranyds.length; j++) {
       var secondcoord = botranyds[j]
       var botcoords = getRelativeCoordinates(secondcoord, triangulatorBots, 3, 2);
-      ctx.fillText(secondcoord.name + "'s coordinates are: (" + botcoords.X + ", " + botcoords.Y + ")", 10, 480);
-      ctx.fillText("It took: " + timeToComplete + "ms to calculate coordinates", 10, 20);
+      if (msgShown[j] !== "true") {
+      ctx.fillText(secondcoord.name + "'s coordinates are: (" + botcoords.X + ", " + botcoords.Y + ")", 10, 380 + 30*j);
+      msgShown[j] = "true"
+      }
+      //ctx.fillText("It took: " + timeToComplete + "ms to calculate coordinates", 10, 20 + 30*j);
       if (secondcoord !== coordinate) {
         ctx.lineWidth = .3;
 
